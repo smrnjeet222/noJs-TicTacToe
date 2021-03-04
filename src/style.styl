@@ -1,0 +1,122 @@
+*
+  box-sizing border-box
+  margin 0
+  padding 0
+
+:root
+  --size 50vmin
+  --cell-size calc(var(--size)/3)
+ 
+body
+  min-height 100vh
+  display grid
+  place-items center
+  overflow hidden
+
+.board
+  background hsla(0, 0%, 10%, 0.1)
+  height var(--size)
+  width var(--size)
+  display grid
+  grid-template-columns repeat(3, 1fr)
+  grid-template-rows repeat(3, 1fr)
+  place-items center
+  &__cell
+    position relative
+    height var(--cell-size)
+    width var(--cell-size)
+label
+  position absolute
+  width 100%
+  height 100%
+  
+:checked ~ .board .board__cell label:nth-of-type(odd)
+:checked ~ :checked ~ .board .board__cell label:nth-of-type(even)
+:checked ~ :checked ~ :checked ~ .board .board__cell label:nth-of-type(odd)
+:checked ~ :checked ~ :checked ~ :checked ~ .board .board__cell label:nth-of-type(even)
+:checked ~ :checked ~ :checked ~ :checked ~ :checked ~ .board .board__cell label:nth-of-type(odd)
+:checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ .board .board__cell label:nth-of-type(even)
+:checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ .board .board__cell label:nth-of-type(odd)
+:checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ .board .board__cell label:nth-of-type(even)
+  display: block
+
+    
+:checked ~ .board .board__cell label:nth-of-type(even)
+:checked ~ :checked ~ .board .board__cell label:nth-of-type(odd)
+:checked ~ :checked ~ :checked ~ .board .board__cell label:nth-of-type(even)
+:checked ~ :checked ~ :checked ~ :checked ~ .board .board__cell label:nth-of-type(odd)
+:checked ~ :checked ~ :checked ~ :checked ~ :checked ~ .board .board__cell label:nth-of-type(even)
+:checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ .board .board__cell label:nth-of-type(odd)
+:checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ .board .board__cell label:nth-of-type(even)
+:checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ .board .board__cell label:nth-of-type(odd)
+  display: none
+  
+  
+label:nth-of-type(odd)
+  color: red
+
+    
+label:nth-of-type(even)
+  color: green
+  
+.game
+  position relative
+  &__result
+    display none
+  
+input
+  position fixed
+  top 100%
+ 
+button
+  position absolute
+  top 125%
+  
+.o
+.x
+  display none
+  position absolute
+  height var(--cell-size)
+  width var(--cell-size)  
+  left calc(var(--x) * var(--cell-size))
+  top calc(var(--y) * var(--cell-size))
+  z-index 2
+  
+ :checked + div
+   display block
+  
+.o
+  background hsla(0, 50%, 50%, 0.4)
+.x
+  background hsla(210, 50%, 50%, 0.4)
+  
+  
+  
+// Winning combos
+#x-0:checked ~ #x-1:checked ~ #x-2:checked ~ .game__result--x
+#x-3:checked ~ #x-4:checked ~ #x-5:checked ~ .game__result--x
+#x-6:checked ~ #x-7:checked ~ #x-8:checked ~ .game__result--x
+#x-0:checked ~ #x-3:checked ~ #x-6:checked ~ .game__result--x
+#x-1:checked ~ #x-4:checked ~ #x-7:checked ~ .game__result--x
+#x-2:checked ~ #x-5:checked ~ #x-8:checked ~ .game__result--x
+#x-0:checked ~ #x-4:checked ~ #x-8:checked ~ .game__result--x
+#x-2:checked ~ #x-4:checked ~ #x-6:checked ~ .game__result--x
+#o-0:checked ~ #o-1:checked ~ #o-2:checked ~ .game__result--o
+#o-3:checked ~ #o-4:checked ~ #o-5:checked ~ .game__result--o
+#o-6:checked ~ #o-7:checked ~ #o-8:checked ~ .game__result--o
+#o-0:checked ~ #o-3:checked ~ #o-6:checked ~ .game__result--o
+#o-1:checked ~ #o-4:checked ~ #o-7:checked ~ .game__result--o
+#o-2:checked ~ #o-5:checked ~ #o-8:checked ~ .game__result--o
+#o-0:checked ~ #o-4:checked ~ #o-8:checked ~ .game__result--o
+#o-2:checked ~ #o-4:checked ~ #o-6:checked ~ .game__result--o
+  display flex
+  ~ .game__result--draw
+    display no
+
+:checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked
+  // if the last move is played and there isn't a winner, show a draw
+  ~ .game__result--draw
+    display block
+
+  ~ button
+    display block

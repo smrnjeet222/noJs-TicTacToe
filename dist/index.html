@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - noJs-TicTacToe</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<form class="game">
+  <input type="checkbox" id="x-0"/>
+  <div class="x" style="--x: 0; --y: 0">Cross</div>
+  <input type="checkbox" id="o-0"/>
+  <div class="o" style="--x: 0; --y: 0">Naught</div>
+  <input type="checkbox" id="x-1"/>
+  <div class="x" style="--x: 1; --y: 0">Cross</div>
+  <input type="checkbox" id="o-1"/>
+  <div class="o" style="--x: 1; --y: 0">Naught</div>
+  <input type="checkbox" id="x-2"/>
+  <div class="x" style="--x: 2; --y: 0">Cross</div>
+  <input type="checkbox" id="o-2"/>
+  <div class="o" style="--x: 2; --y: 0">Naught</div>
+  <input type="checkbox" id="x-3"/>
+  <div class="x" style="--x: 0; --y: 1">Cross</div>
+  <input type="checkbox" id="o-3"/>
+  <div class="o" style="--x: 0; --y: 1">Naught</div>
+  <input type="checkbox" id="x-4"/>
+  <div class="x" style="--x: 1; --y: 1">Cross</div>
+  <input type="checkbox" id="o-4"/>
+  <div class="o" style="--x: 1; --y: 1">Naught</div>
+  <input type="checkbox" id="x-5"/>
+  <div class="x" style="--x: 2; --y: 1">Cross</div>
+  <input type="checkbox" id="o-5"/>
+  <div class="o" style="--x: 2; --y: 1">Naught</div>
+  <input type="checkbox" id="x-6"/>
+  <div class="x" style="--x: 0; --y: 2">Cross</div>
+  <input type="checkbox" id="o-6"/>
+  <div class="o" style="--x: 0; --y: 2">Naught</div>
+  <input type="checkbox" id="x-7"/>
+  <div class="x" style="--x: 1; --y: 2">Cross</div>
+  <input type="checkbox" id="o-7"/>
+  <div class="o" style="--x: 1; --y: 2">Naught</div>
+  <input type="checkbox" id="x-8"/>
+  <div class="x" style="--x: 2; --y: 2">Cross</div>
+  <input type="checkbox" id="o-8"/>
+  <div class="o" style="--x: 2; --y: 2">Naught</div>
+  <div class="board">
+    <div class="board__cell">
+      <label for="x-0"></label>
+      <label for="o-0"></label>
+    </div>
+    <div class="board__cell">
+      <label for="x-1"></label>
+      <label for="o-1"></label>
+    </div>
+    <div class="board__cell">
+      <label for="x-2"></label>
+      <label for="o-2"></label>
+    </div>
+    <div class="board__cell">
+      <label for="x-3"></label>
+      <label for="o-3"></label>
+    </div>
+    <div class="board__cell">
+      <label for="x-4"></label>
+      <label for="o-4"></label>
+    </div>
+    <div class="board__cell">
+      <label for="x-5"></label>
+      <label for="o-5"></label>
+    </div>
+    <div class="board__cell">
+      <label for="x-6"></label>
+      <label for="o-6"></label>
+    </div>
+    <div class="board__cell">
+      <label for="x-7"></label>
+      <label for="o-7"></label>
+    </div>
+    <div class="board__cell">
+      <label for="x-8"></label>
+      <label for="o-8"></label>
+    </div>
+  </div>
+  <div class="game__result game__result--x">X wins!</div>
+  <div class="game__result game__result--o">O wins!</div>
+  <div class="game__result game__result--draw">Draw</div>
+  <button type="reset">Reset Board</button>
+</form>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
